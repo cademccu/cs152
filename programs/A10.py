@@ -23,6 +23,7 @@ def count_words(filename):
     my_dict = {}
     with open(filename, 'r') as f:
         text = f.read()
+        ''' fine, I have to use his method
         _words = text.split()
         # remove not alpha num bs
         # not gonna use anything fancy 
@@ -33,6 +34,8 @@ def count_words(filename):
                 if char.isalpha():
                     w += char
             words.append(w.lower())
+        '''
+        words = extract_words(text)
             
         for word in words:
             if word in my_dict:
@@ -63,7 +66,7 @@ def report_distribution(count):
 
     s_list = []
     s_list.append("{:>5}".format(num))
-    max = 10000
+    max = 20
     for tup in tup_list:
         if max == 0:
             break
